@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Photos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .gallery {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-item .overlay span {
+            color: white;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #222;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mon Portfolio Photo</h1>
+        <p>Découvrez mes meilleures photographies</p>
+    </header>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Photo 1">
+            <div class="overlay"><span>Portrait</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Photo 2">
+            <div class="overlay"><span>Paysage</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Photo 3">
+            <div class="overlay"><span>Nature</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Photo 4">
+            <div class="overlay"><span>Urbain</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Photo 5">
+            <div class="overlay"><span>Abstrait</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Photo 6">
+            <div class="overlay"><span>Macro</span></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mon Portfolio Photo. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
