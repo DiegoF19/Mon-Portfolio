@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Inspiré par Todd's Got A Pen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #1d1d1f;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #1d1d1f;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0071e3;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(180deg, #f5f5f7 0%, #fff 100%);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: #6e6e73;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .hero .cta {
+            padding: 12px 24px;
+            background: #0071e3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+
+        .hero .cta:hover {
+            background: #005bb5;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio h2 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-info {
+            padding: 20px;
+            background: #fff;
+        }
+
+        .project-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            font-size: 14px;
+            color: #6e6e73;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 20px;
+            background: #f5f5f7;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            font-size: 18px;
+            color: #6e6e73;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 15px;
+            border: 1px solid #d2d2d7;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .contact textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact button {
+            padding: 12px;
+            background: #0071e3;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact button:hover {
+            background: #005bb5;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 20px;
+            background: #f5f5f7;
+            text-align: center;
+            color: #6e6e73;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 20px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            .portfolio h2,
+            .about h2,
+            .contact h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home" class="logo">Mon Portfolio</a>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1 class="fade-in">Clarté. Impact. Résultats.</h1>
+        <p class="fade-in">Je crée des solutions numériques qui captivent et convertissent.</p>
+        <a href="#portfolio" class="cta fade-in">Voir mes projets</a>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="fade-in">Mes Réalisations</h2>
+        <div class="grid">
+            <div class="project fade-in">
+                <img src="https://via.placeholder.com/600x400" alt="Projet 1">
+                <div class="project-info">
+                    <h3>Projet 1</h3>
+                    <p>Une application web moderne conçue pour optimiser l'expérience utilisateur.</p>
+                </div>
+            </div>
+            <div class="project fade-in">
+                <img src="https://via.placeholder.com/600x400" alt="Projet 2">
+                <div class="project-info">
+                    <h3>Projet 2</h3>
+                    <p>Campagne de marketing digital avec un design percutant et des résultats mesurables.</p>
+                </div>
+            </div>
+            <div class="project fade-in">
+                <img src="https://via.placeholder.com/600x400" alt="Projet 3">
+                <div class="project-info">
+                    <h3>Projet 3</h3>
+                    <p>Site e-commerce intuitif avec une interface utilisateur élégante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="fade-in">À Propos de Moi</h2>
+        <p class="fade-in">
+            Je suis un créatif passionné par la clarté et l'efficacité. Avec une expertise en design et développement web, je transforme des idées complexes en solutions simples et percutantes. Mon objectif : faire briller votre message et atteindre vos objectifs.
+        </p>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="fade-in">Contactez-Moi</h2>
+        <form class="fade-in">
+            <input type="text" placeholder="Votre nom" required>
+            <input type="email" placeholder="Votre email" required>
+            <textarea placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Votre Nom. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll pour les liens d'ancrage
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation au scroll
+        const elements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        elements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
