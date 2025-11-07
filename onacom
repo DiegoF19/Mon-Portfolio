@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnaCom - Des solutions à l'infini</title>
+    <style>
+        body {
+            font-family: "Bell MT", serif;
+            margin: 0;
+            padding: 0;
+            color: #474747;
+            background-color: #FFFFFF;
+        }
+        .hero {
+            height: 100vh;
+            background: url('https://via.placeholder.com/1920x1080?text=Pyrénées+Background') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 5%;
+            color: #FFFFFF;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 4em;
+            color: #b8120d;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .hero .cta {
+            background: #FFFFFF;
+            color: #b8120d;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 2px solid #b8120d;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #b8120d;
+        }
+        .section {
+            padding: 50px 5%;
+            text-align: center;
+        }
+        .section h2 {
+            color: #b8120d;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .service, .portfolio, .avis, .apropos, .newsletter {
+            margin-bottom: 40px;
+        }
+        .service-content, .portfolio-content, .avis-content, .apropos-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .service-content img, .portfolio-content img, .apropos-content img {
+            max-width: 40%;
+            height: auto;
+        }
+        .avis-content p {
+            font-style: italic;
+            max-width: 60%;
+            margin: 0 auto;
+        }
+        .newsletter-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .newsletter-content input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+            border: 2px solid #b8120d;
+            border-radius: 5px;
+        }
+        .newsletter-content button {
+            padding: 10px 20px;
+            background: #b8120d;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .newsletter-content p {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="logo">∞</div>
+        <h1>OnaCom - Des solutions à l'infini</h1>
+        <p>Agence de communication généraliste basée dans le Sud-Ouest</p>
+        <a href="#service" class="cta">Découvrez nos services</a>
+    </div>
+
+    <div class="section service" id="service">
+        <h2>Service</h2>
+        <div class="service-content">
+            <p>Nous offrons un <strong>accompagnement personnalisé</strong> et une <strong>polyvalence créative</strong> pour affirmer votre identité pyrénéenne et basque.</p>
+            <img src="https://via.placeholder.com/400x300?text=Team+Collaboration" alt="Team working">
+        </div>
+    </div>
+
+    <div class="section portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-content">
+            <p>Explorez nos projets : <strong>Promouvoir les acteurs locaux</strong>. <a href="#portfolio-full" style="color: #b8120d;">Voir plus</a></p>
+            <img src="https://via.placeholder.com/400x300?text=Portfolio+Image" alt="Portfolio sample">
+        </div>
+    </div>
+
+    <div class="section avis">
+        <h2>Avis client</h2>
+        <div class="avis-content">
+            <p>"OnaCom a su affirmer notre identité locale avec brio!" - J.D.</p>
+        </div>
+    </div>
+
+    <div class="section apropos">
+        <h2>A propos</h2>
+        <div class="apropos-content">
+            <p>Fondateurs passionnés, <strong>Maïalen</strong> et <strong>Diego</strong> portent les valeurs humaines et locales d’OnaCom.</p>
+            <img src="https://via.placeholder.com/400x300?text=Pyrénées+Landscape" alt="Team background">
+        </div>
+    </div>
+
+    <div class="section newsletter">
+        <h2>Newsletter</h2>
+        <div class="newsletter-content">
+            <p>Restez informé de nos actualités</p>
+            <input type="email" placeholder="Votre email">
+            <button type="submit">S'inscrire</button>
+            <p>Votre email est sécurisé.</p>
+        </div>
+    </div>
+</body>
+</html>
